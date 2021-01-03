@@ -94,4 +94,6 @@ db.messages.insert([{"idFrom": idVenom, "idTo": idHulka, "message": "¿How are y
 db.messages.aggregate([ {$lookup: {from: "users", localField: "idFrom", foreignField: "_id", as: "sender" }}, {$lookup: {from: "users", localField: "idTo", foreignField: "_id", as: "receiver" }}])
 ```
 
+* You can work with Mongodb Atlas or mongoose, however I am trying to work locally with less dependencies or tools and create a Virtual Machine with Docker and the necessary configuration.
+
 [mongodb]: https://github.com/E2517/images/blob/main/images/twitter/mongodb.png
