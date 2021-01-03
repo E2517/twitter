@@ -84,12 +84,12 @@ db
 ## How you can work with related data in MongoDB natively not using Mongoose
 
 ```
-db.users.insert([{"name": "Mauricio", "email": "mauricio@email.com"},{"name": "Patricio", "email": "patricio@email.com"}])
+db.users.insert([{"name": "venom", "email": "venom@email.com"},{"name": "hulka", "email": "hulka@email.com"}])
 
-var idMauricio = ObjectId("5c9ccc140aee604c4ab6cd06")
-var idPatricio = ObjectId("5c9ccc140aee604c4ab6cd07")
+var idVenom = ObjectId("5c9ccc140aee604c4ab6cd06")
+var idHulka = ObjectId("5c9ccc140aee604c4ab6cd07")
 
-db.messages.insert([{"idFrom": idMauricio, "idTo": idPatricio, "message": "¿Como estas?"},{"idFrom": idPatricio, "idTo": idMauricio, "message": "Muy bien, gracias"}])
+db.messages.insert([{"idFrom": idVenom, "idTo": idHulka, "message": "¿How are you?"},{"idFrom": idHulka, "idTo": idVenom, "message": "Not bad, thanks"}])
 
 db.messages.aggregate([ {$lookup: {from: "users", localField: "idFrom", foreignField: "_id", as: "sender" }}, {$lookup: {from: "users", localField: "idTo", foreignField: "_id", as: "receiver" }}])
 ```
