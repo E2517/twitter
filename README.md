@@ -1,70 +1,78 @@
 # Twitter | React, Go and Mongodb
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project will be coded with React in the frontend, Go in the backend and Mongodb as a non-relational database.
 
-## Available Scripts
+## Set up Mongodb locally
 
-In the project directory, you can run:
+MacOS Sierra 10.13.6
 
-### `npm start`
+After download Mongodb go to the folder and execute these commands
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+$ cd ~/Download
+$ tar xzf mongodb-osx-x86_64-2.2.3.tgz (tu version de Mongodb)
+$ sudo mv mongodb-osx-x86_64-2.2.3 /usr/local/mongodb
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+create MongoDB Data directory
 
-### `npm test`
+```
+$ sudo mkdir -p /data/db
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Change the owner to yours
 
-### `npm run build`
+```
+$ whoami
+CCR
+$ sudo chown CCR /data/db
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Set mongodb/bin to $PATH
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+$ cd
+$ pwd
+/Users/codebind
+$ touch .bash_profile
+$ open .bash_profile
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Add two export to the file
 
-### `npm run eject`
+```
+export MONGO_PATH=/usr/local/mongodb
+export PATH=$PATH:$MONGO_PATH/bin
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Start mongodb, execute on the Terminal
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+mongod
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Mongodb
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Open a terminal an execute
 
-## Learn More
+```
+mongo
+show dbs
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Create a database
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+use mydatabase (create a database but is not fully created until you insert data into it)
+mydatabase.user.insert({name: "e2517", age: 205})
 
-### Code Splitting
+Database: mydatabase
+Collection: user
+Document: {name: "Ada Lovelace", age: 205}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Current database
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+db
+```
