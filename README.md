@@ -79,6 +79,19 @@ db
 
 - You can use MongoDB Compass, that include a MongoSH
 
+## How you can work with related data in MongoDB
+
+```
+db.users.insert([{"name": "Mauricio", "email": "mauricio@email.com"},{"name": "Patricio", "email": "patricio@email.com"}])
+
+var idMauricio = ObjectId("5c9ccc140aee604c4ab6cd06")
+var idPatricio = ObjectId("5c9ccc140aee604c4ab6cd07")
+
+db.messages.insert([{"idFrom": idMauricio, "idTo": idPatricio, "message": "¿Como estas?"},{"idFrom": idPatricio, "idTo": idMauricio, "message": "Muy bien, gracias"}])
+
+db.messages.aggregate([ {$lookup: {from: "users", localField: "idFrom", foreignField: "_id", as: "sender" }}, {$lookup: {from: "users", localField: "idTo", foreignField: "_id", as: "receiver" }}])
+```
+
 ![mongodb][]
 
 [mongodb]: https://github.com/E2517/images/blob/main/images/twitter/mongodb.png
