@@ -64,7 +64,7 @@ Create a database
 
 ```
 use mydatabase (create a database but is not fully created until you insert data into it)
-mydatabase.user.insert({name: "e2517", age: 205})
+db.user.insert({name: "e2517", age: 205})
 
 Database: mydatabase
 Collection: user
@@ -76,3 +76,5 @@ Current database
 ```
 db
 ```
+
+- You can use MongoDB Compass, that include a
