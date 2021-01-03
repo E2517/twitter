@@ -6,7 +6,7 @@ This project will be coded with React in the frontend, Go in the backend and Mon
 
 MacOS Sierra 10.13.6
 
-After download Mongodb go to the folder and execute these commands
+After download Mongodb go to the folder and execute these commands in terminal
 
 ```
 $ cd ~/Download
@@ -45,7 +45,7 @@ export MONGO_PATH=/usr/local/mongodb
 export PATH=$PATH:$MONGO_PATH/bin
 ```
 
-Start mongodb, execute on the Terminal
+Start mongodb, execute in Terminal
 
 ```
 mongod
