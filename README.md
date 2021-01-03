@@ -77,4 +77,6 @@ Current database
 db
 ```
 
-- You can use MongoDB Compass, that include a
+- You can use MongoDB Compass, that include a MongoSH
+
+![mongodb][]
