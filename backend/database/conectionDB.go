@@ -8,7 +8,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-/*MongoCN variable*/
+/*MongoCN variable calling the function ConnectBD*/
 var MongoCN = ConnectBD()
 var clientOptions = options.Client().ApplyURI("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false")
 
@@ -28,7 +28,7 @@ func ConnectBD() *mongo.Client {
 	return client
 }
 
-/*CheckConnection to the database */
+/*CheckConnection to MongoDB database */
 func CheckConnection() int {
 	err := MongoCN.Ping(context.TODO(), nil)
 	if err != nil {
