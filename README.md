@@ -1,6 +1,6 @@
 # Twitter | React, Go and Mongodb
 
-This project will be coded with React in the frontend, Go in the backend and Mongodb as a non-relational database.
+This project will be coded with React in the frontend, Go in the backend, Mongodb as a non-relational database and a Virtual Machine in Cloud (Amazon Web Services, Google Cloud Platform)
 
 ## Set up Mongodb locally
 
@@ -80,5 +80,20 @@ db
 - You can use MongoDB Compass, that include a MongoSH
 
 ![mongodb][]
+
+## How you can work with related data in MongoDB natively not using Mongoose
+
+```
+db.users.insert([{"name": "venom", "email": "venom@email.com"},{"name": "hulka", "email": "hulka@email.com"}])
+
+var idVenom = ObjectId("5c9ccc140aee604c4ab6cd06")
+var idHulka = ObjectId("5c9ccc140aee604c4ab6cd07")
+
+db.messages.insert([{"idFrom": idVenom, "idTo": idHulka, "message": "¿How are you?"},{"idFrom": idHulka, "idTo": idVenom, "message": "Not bad, thanks"}])
+
+db.messages.aggregate([ {$lookup: {from: "users", localField: "idFrom", foreignField: "_id", as: "sender" }}, {$lookup: {from: "users", localField: "idTo", foreignField: "_id", as: "receiver" }}])
+```
+
+* You can work with Mongodb Atlas or mongoose, however I am trying to work locally with less dependencies or tools and create a Virtual Machine with Docker and the necessary configuration.
 
 [mongodb]: https://github.com/E2517/images/blob/main/images/twitter/mongodb.png
