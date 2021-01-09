@@ -21,3 +21,9 @@ build
 node_modules
 
 package-lock.json
+
+# go
+
+bin
+pkg
+src
