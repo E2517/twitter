@@ -96,4 +96,44 @@ db.messages.aggregate([ {$lookup: {from: "users", localField: "idFrom", foreignF
 
 * You can work with Mongodb Atlas or mongoose, however I am trying to work locally with less dependencies or tools and create a Virtual Machine with Docker and the necessary configuration.
 
+## Set up Go locally in MaOSX
+
+Before starting execute this commads on the Terminal when you create the folder
+
+```
+go mod init github.com/e2527/twitter/backend
+```
+
+You will see a new file go.mod
+
+```
+module github.com/e2527/twitter/backend
+
+go 1.15
+
+require (
+  go.mongodb.org/mongo-driver v1.4.4
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible
+	github.com/gorilla/mux v1.8.0
+	github.com/kisielk/errcheck v1.5.0 // indirect
+	github.com/ptilotta/twittor v0.0.0-20200419231543-94a3074739ce
+	github.com/rs/cors v1.7.0
+	golang.org/x/crypto v0.0.0-20201221181555-eec23a3978ad
+)
+
+```
+
+Execute this commands on the terminal, this will install the packages on the PATH go/src and it will create a folder github.com and will add the packages inside
+
+```
+go get go.mongodb.org/mongo-driver
+go get github.com/dgrijalva/jwt-go 
+go get github.com/gorilla/mux 
+go get github.com/kisielk/errcheck 
+go get github.com/ptilotta/twittor 
+go get github.com/rs/cors 
+go get golang.org/x/crypto 
+
+```
+
 [mongodb]: https://github.com/E2517/images/blob/main/images/twitter/mongodb.png
