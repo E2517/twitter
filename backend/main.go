@@ -9,7 +9,7 @@ import (
 
 func main() {
 	if database.CheckConnection() == 0 {
-		log.Fatal("Sin conexión a la BD")
+		log.Fatal("Error: no connection to MongoDB")
 		return
 	}
 	routes.Handlers()
