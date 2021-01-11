@@ -16,6 +16,8 @@
 
 .DS_Store
 
+.eslintcache
+
 build
 
 node_modules
