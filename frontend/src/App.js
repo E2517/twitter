@@ -6,14 +6,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p> Wellcome e2517 </p>{" "}
+        <p> Twitter: React, Go and MongoDB </p>{" "}
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://carloscaravaca.com"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React{" "}
+          e2517{" "}
         </a>{" "}
       </header>{" "}
     </div>
