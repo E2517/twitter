@@ -13,7 +13,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          e2517 GitHub{" "}
+          e2517{" "}
         </a>{" "}
       </header>{" "}
     </div>
