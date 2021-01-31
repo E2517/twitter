@@ -1,6 +1,6 @@
 # Twitter | React, Go and Mongodb
 
-This project will be coded with React in the frontend, Go in the backend, Mongodb as a non-relational database and a Virtual Machine in Cloud (Amazon Web Services, Google Cloud Platform)
+This project will be coded with React in the frontend, Go in the backend, Mongodb as a non-relational database and in Cloud with Amazon Web Services.
 
 ## Set up Mongodb locally
 
